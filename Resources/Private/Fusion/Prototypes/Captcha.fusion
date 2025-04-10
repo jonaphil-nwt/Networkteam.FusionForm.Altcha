@@ -1,0 +1,70 @@
+prototype(Networkteam.FusionForm.Altcha:Captcha) < prototype(Neos.Fusion.Form:Component.Field) {
+
+    // Challenge data array
+    challenge = ${Networkteam.Altcha.Challenge.create()}
+
+    options = Neos.Fusion:DataStructure {
+        // All configuration options can be found at https://altcha.org/docs/website-integration/
+
+        // Automatically verify without user interaction (possible values: off, onfocus, onload, onsubmit
+        auto = 'off'
+        // Artificial delay in milliseconds before verification (defaults to 0).
+        delay = null
+        // Challenge expiration duration in milliseconds.
+        expire = null
+        // Enable floating UI (possible values: auto, top, bottom).
+        floating = null
+        // CSS selector of the “anchor” to which the floating UI will be attached (defaults to the button[type="submit"] in the related form).
+        floatinganchor = null
+        // Y offset from the anchor element for the floating UI in pixels (defaults to 12).
+        floatingoffset = null
+        // Whether to “persist” (keep visible) the floating widget after verification (possible values: true | false | focus; defaults to false, meaning the widget will hide).
+        floatingpersist = null
+        // Hide the footer (ALTCHA link).
+        hidefooter = false
+        // Hide the ALTCHA logo.
+        hidelogo = false
+        // The checkbox id attribute. Useful for multiple instances of the widget on the same page.
+        id = null
+        // Max number to iterate to (defaults to 1,000,000).
+        maxnumber = null
+        // Name of the hidden field containing the payload (defaults to “altcha”).
+        name = null
+        // JSON-encoded translation strings.
+        strings = Networkteam.FusionForm.Altcha:Captcha.Strings
+        // Automatically re-fetch and re-validate when the challenge expires (defaults to true).
+        refetchonexpire = null
+        // Number of workers to utilize for PoW (defaults to navigator.hardwareConcurrency || 8, max value 16).
+        workers = null
+        // URL of the Worker script (defaults to ./worker.js, only works with external build).
+        workerurl = null
+
+        @process.filter = ${Array.filter(value)}
+    }
+
+    @propTypes {
+        challenge = ${PropTypes.dataStructure({})}
+        options = ${PropTypes.dataStructure({})}
+    }
+
+    renderer = afx`
+        <altcha-widget
+                name={field.getName()}
+                challengejson={Json.stringify(props.challenge)}
+                {...props.options}
+        ></altcha-widget>
+    `
+}
+
+prototype(Networkteam.FusionForm.Altcha:Captcha.Strings) < prototype(Neos.Fusion:DataStructure) {
+    ariaLinkLabel = ${I18n.id('widget.ariaLinkLabel').package('Networkteam.Flow.Altcha').translate()}
+    error = ${I18n.id('widget.error').package('Networkteam.Flow.Altcha').translate()}
+    expired = ${I18n.id('widget.expired').package('Networkteam.Flow.Altcha').translate()}
+    footer = ${I18n.id('widget.footer').package('Networkteam.Flow.Altcha').translate()}
+    label = ${I18n.id('widget.label').package('Networkteam.Flow.Altcha').translate()}
+    verified = ${I18n.id('widget.verified').package('Networkteam.Flow.Altcha').translate()}
+    verifying = ${I18n.id('widget.verifying').package('Networkteam.Flow.Altcha').translate()}
+    waitAlert = ${I18n.id('widget.waitAlert').package('Networkteam.Flow.Altcha').translate()}
+
+    @process.toJson = ${Json.stringify(value)}
+}

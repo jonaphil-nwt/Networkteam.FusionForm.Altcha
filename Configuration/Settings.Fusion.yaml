@@ -1,0 +1,4 @@
+Neos:
+  Fusion:
+    defaultContext:
+      'Networkteam.Altcha.Challenge': 'Networkteam\FusionForm\Altcha\EelHelper\ChallengeHelper'

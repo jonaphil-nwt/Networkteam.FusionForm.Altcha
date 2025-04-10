@@ -1,0 +1,20 @@
+{
+    "description": "Use ALTCHA Next-Gen Captcha with Neos.Fusion.Form in Neos CMS",
+    "type": "neos-package",
+    "name": "networkteam/fusionform-altcha",
+    "require": {
+        "neos/neos": "~8.3",
+        "neos/fusion-form": "~2.3",
+        "networkteam/flow-altcha": "~0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Networkteam\\FusionForm\\Altcha\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Networkteam.FusionForm.Altcha"
+        }
+    }
+}

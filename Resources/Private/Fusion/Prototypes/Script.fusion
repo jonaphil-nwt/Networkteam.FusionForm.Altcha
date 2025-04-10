@@ -1,0 +1,12 @@
+prototype(Networkteam.FusionForm.Altcha:Script) < prototype(Neos.Fusion:Tag) {
+    @position = 'end'
+    tagName = 'script'
+    attributes {
+        src = Neos.Fusion:ResourceUri {
+            path = 'resource://Networkteam.Flow.Altcha/Public/Javascript/altcha.min.js'
+        }
+        defer = ${true}
+        async = ${true}
+        type = 'module'
+    }
+}
