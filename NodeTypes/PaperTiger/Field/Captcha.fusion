@@ -1,0 +1,28 @@
+prototype(Networkteam.FusionForm.Altcha:PaperTiger.Field.Captcha) < prototype(Neos.Neos:ContentComponent) {
+    name = ${q(node).property('_identifier')}
+
+    renderer = Neos.Fusion:Case {
+        backend {
+            condition = ${node.context.inBackend}
+            renderer = afx`
+                <Sitegeist.PaperTiger:FieldContainer
+                        field.name={props.name}
+                >
+                    <label>ALTCHA Captcha</label>
+                </Sitegeist.PaperTiger:FieldContainer>
+            `
+        }
+
+        default {
+            condition = true
+            renderer = afx`
+                <Sitegeist.FusionForm.FriendlyCaptcha:Scripts/>
+                    <Networkteam.FusionForm.Altcha:Captcha
+                        field.name={props.name}
+                    >
+                    <Networkteam.FusionForm.Altcha:Captcha />
+                </Networkteam.FusionForm.Altcha:Captcha>
+            `
+        }
+    }
+}

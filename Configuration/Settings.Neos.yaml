@@ -1,0 +1,12 @@
+Neos:
+  Neos:
+
+    fusion:
+      autoInclude:
+        Networkteam.FusionForm.Altcha: true
+
+    userInterface:
+      translation:
+        autoInclude:
+          Networkteam.FusionForm.Altcha:
+            - 'NodeTypes/*'

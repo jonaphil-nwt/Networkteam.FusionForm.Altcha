@@ -1,0 +1,3 @@
+prototype(Networkteam.FusionForm.Altcha:PaperTiger.Field.Captcha.Schema) < prototype(Neos.Fusion:Component) {
+    renderer = ${Form.Schema.string().validator('Networkteam.Flow.Altcha:Captcha').required}
+}

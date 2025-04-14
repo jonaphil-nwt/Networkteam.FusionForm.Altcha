@@ -19,5 +19,8 @@
         "neos": {
             "package-key": "Networkteam.FusionForm.Altcha"
         }
+    },
+    "suggest": {
+        "sitegeist/papertiger": "Editable forms for Neos CMS"
     }
 }
