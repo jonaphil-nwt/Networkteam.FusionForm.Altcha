@@ -1,7 +1,7 @@
 Networkteam.FusionForm.Altcha:PaperTiger.Field.Captcha:
   ui:
     label: i18n
-    icon: resource://Networkteam.PaperTiger.Altcha/Icons/altcha.svg
+    icon: resource://Networkteam.FusionForm.Altcha/Icons/altcha.svg
     group: form.special
   superTypes:
     'Sitegeist.PaperTiger:Field': true
