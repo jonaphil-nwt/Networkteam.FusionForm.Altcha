@@ -1,7 +1,7 @@
 prototype(Networkteam.FusionForm.Altcha:Captcha) < prototype(Neos.Fusion.Form:Component.Field) {
 
     // Challenge data array
-    challenge = ${Networkteam.Altcha.Challenge.create()}
+    challenge = ${Networkteam.Altcha.Challenge.algorithm('SHA-512').minNumber(3500).create()}
 
     options = Neos.Fusion:DataStructure {
         // All configuration options can be found at https://altcha.org/docs/website-integration/
