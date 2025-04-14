@@ -76,6 +76,26 @@ prototype(Vendor.Site:Content.SingleStepFormExample) < prototype(Neos.Fusion.For
 }
 ```
 
+### Add ALTCHA JavaScript widget
+
+The captcha field needs JavaScript for rendering the [ALTCHA widget](https://altcha.org/docs/website-integration). You
+can use the fusion prototype `Networkteam.FusionForm.Altcha:Script` inside `head.javascripts` section of `Neos.Neos:Page`
+or CDN as described in [ALTCHA documentation](https://altcha.org/docs/website-integration).
+
+_Add JavaScript to head of Neos.Neos:Page_
+
+```neosfusion
+prototype(Neos.Neos:Page) {
+    head {
+        javascripts {
+            alcha = Networkteam.FusionForm.Altcha:Script
+        }
+    }
+}
+```
+
+Alternatively, install the NPM package [altcha](https://www.npmjs.com/package/altcha) and import it to your build process.
+
 ## Usage with Sitegeist.PaperTiger
 
 This package ships with a content element for [Sitegeist.PaperTiger](https://github.com/sitegeist/Sitegeist.PaperTiger): 
