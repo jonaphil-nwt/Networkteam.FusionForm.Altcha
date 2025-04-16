@@ -48,6 +48,7 @@ prototype(Networkteam.FusionForm.Altcha:Captcha) < prototype(Neos.Fusion.Form:Co
     }
 
     renderer = afx`
+        <input type="hidden" name={field.getName()} value="" />
         <altcha-widget
                 name={field.getName()}
                 challengejson={Json.stringify(props.challenge)}
