@@ -6,7 +6,7 @@ prototype(Networkteam.FusionForm.Altcha:PaperTiger.Field.Captcha) < prototype(Ne
             condition = ${node.context.inBackend}
             renderer = afx`
                 <Sitegeist.PaperTiger:FieldContainer
-                        field.name={props.name}
+                    field.name={props.name}
                 >
                     <label>ALTCHA Captcha</label>
                 </Sitegeist.PaperTiger:FieldContainer>
@@ -16,12 +16,9 @@ prototype(Networkteam.FusionForm.Altcha:PaperTiger.Field.Captcha) < prototype(Ne
         default {
             condition = true
             renderer = afx`
-                <Sitegeist.FusionForm.FriendlyCaptcha:Scripts/>
-                    <Networkteam.FusionForm.Altcha:Captcha
-                        field.name={props.name}
-                    >
-                    <Networkteam.FusionForm.Altcha:Captcha />
-                </Networkteam.FusionForm.Altcha:Captcha>
+                <Networkteam.FusionForm.Altcha:Captcha
+                    field.name={props.name}
+                />
             `
         }
     }
